@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+Name: Rishabh Chand 
+London Met ID: 20048980
+
+Description: An XML Page is developed for KB Gift Card store which sells Digital and Physical gift cards.
+Each  Gift card has a number of information which is maintained and displayed in a template card.
+-->
+<?xml-stylesheet type="text/css" href="style.css"?>
+<store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:noNamespaceSchemaLocation="catalog_20048980.xsd">
+    <header>
+        <!-- The header section contains navigation bar and main section of the webpage -->
+        <nav>
+            <!-- The navigatio contains store details, links to different pages and a search box -->
+            <store_details>
+                <!--this elements contains all the information of the store-->
+                <name>KB Gift Cards</name>
+                <address>
+                    <country>United Kingdom</country>
+                    <city>London</city>
+                </address>
+                <telephone_number>00976538</telephone_number>
+                <url>www.kbgiftcards.com.np</url>
+                <logo></logo>
+            </store_details>
+            <links>
+                <!-- This contains navigation bar links -->
+                <ul>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Product</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                </ul>
+            </links>
+            <search>
+                <!-- This contains search bar for the navigation bar -->
+                <searchbox></searchbox>
+            </search>
+        </nav>
+
+         
+        <cards>
+           <!-- cards element contains all the rows which contains gift card details -->
+            <featured row_number="1">
+                <!-- Featured row contains details of all the featured gift cards -->
+                <div id="h1">
+                    <title>Featured</title>
+                </div>
+                <products>
+                    <gift_card id="gc1" type="Digital" category="Music" class="Featured ">
+                    <!-- Details of the gift card -->
+                        <image id="apple90"></image>
+                        <card_name>Apple Gift Card</card_name>
+                        <cost>5500</cost>
+                        <supplier>Apple</supplier>
+                        <validity>2024</validity>
+                        <stock>Available: 16</stock>
+                        <info>Cannot Be Returned!</info>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+                    <gift_card id="gc2" type="Physical" category="Gift" class="Featured">
+                        <!-- Details of the gift card -->
+                        <image id="Visa"></image>
+                        <card_name>Visa Happy B-Day Gift Card</card_name>
+                        <cost>3500</cost> 
+                        <supplier>Amazon</supplier>
+                        <validity>2024</validity>
+                        <stock>Available: 34</stock>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+                    
+                    <gift_card id="gc3" type="Digital" category="Purchase" class="Featured">
+                        <!-- Details of the gift card -->
+                        <image id="spotify"></image>
+                        <card_name>Spotify $10</card_name>
+                        <cost>1500</cost>
+                        <supplier>Spotify</supplier>
+                        <validity>2024</validity>
+                        <discount>5</discount>
+                        <info>Discount only for IME pay payments</info>
+                        
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+
+                    <gift_card id="gc4" type="Digital" category="Gaming" class="Featured">
+                        <!-- Details of the gift card -->
+                        <image id="steam"></image>
+                        <card_name>Steam Wallet Code</card_name>
+                        <cost>12000</cost>
+                        <supplier>Steam</supplier>
+                        <discount>10</discount>
+                        <delivery>Instant Delivery!</delivery>
+                        <purchase_btn notAvailable="no" >Out of Stock</purchase_btn>
+                    </gift_card>
+                </products>
+            </featured>
+            <row row_number="2">
+                <!-- This contains card details of second row -->
+                <div id="h1">
+                    <title>ALL PRODUCTS</title>
+                </div>
+                <products>
+                    <gift_card id="gc5" type="Physical" category="Gaming" >
+                        <!-- Details of the gift card -->
+                        <image id="nintendo"></image>
+                        <card_name>NS Family Membership</card_name>
+                        <cost>4500</cost>
+                        <supplier>Nintendo</supplier>
+                        <validity>2026</validity>
+                        <delivery>Instant Delivery!</delivery>
+                        
+                        <purchase_btn>Buy Now</purchase_btn>
+                        
+                    </gift_card>
+
+                    <gift_card id="gc6" type="Digital" category="Gaming">
+                        <!-- Details of the gift card -->
+                        <image id="xbox"></image>
+                        <card_name>Xbox Game Pass Ultimate</card_name>
+                        <cost>6000</cost> 
+                        <supplier>Xbox</supplier>
+                        <stock>Available: 100</stock>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+                    <gift_card id="gc7" type="Physical" category="Gaming" >
+                        <!-- Details of the gift card -->
+                        <image id="playstation"></image>
+                        <card_name>Playstation Gift Card</card_name>
+                        <cost>3500</cost>
+                        <supplier>PS</supplier>
+                        <validity>2024</validity>
+                        <info>No Refund</info>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+
+                    <gift_card id="gc8" type="Digital" category="Video" >
+                        <!-- Details of the gift card -->
+                        <image id="netflix"></image>
+                        <card_name>Netflix Gift Card</card_name>
+                        <cost>2700</cost>
+                        <supplier>Netflix</supplier>
+                        <validity>2025</validity>
+                        <discount>5</discount>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+                    
+                </products>
+            </row>
+            <row row_number="3">
+                <!-- Contains Details of cards of 3rd row  -->
+                <products>
+                    <gift_card id="gc9" type="Physical" category="Purchase" >
+                        <!-- Details of the gift card -->
+                        <image id="googleplay"></image>
+                        <card_name>Google Play Gift Card</card_name>
+                        <cost>5700</cost>
+                        <supplier>Google</supplier>
+                        <discount>10</discount>
+                        <info>Discount only for IME Pay Payments</info>
+                        <purchase_btn>Buy Now</purchase_btn>
+                        
+                    </gift_card>
+
+                    <gift_card id="gc10" type="Physical" category="Purchase">
+                        <!-- Details of the gift card -->
+                        <image id="amazon"></image>
+                        <card_name>Amazon Gift Card</card_name>
+                        <cost>5800</cost> 
+                        <supplier>Amazon</supplier>
+                        <validity>2024</validity>
+                        <stock>Available: 120</stock>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+                    <gift_card id="gc11" type="Physical" category="Gaming" >
+                        <!-- Details of the gift card -->
+                        <image id="fortnite"></image>
+                        <card_name>Fortnite V-Bucks Gift Card</card_name>
+                        <cost>3800</cost>
+                        <supplier>Epic Games</supplier>
+                        <discount>10</discount>
+                        <info>No Refund</info>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+
+                    <gift_card id="gc12" type="Digital" category="Gaming">
+                        <!-- Details of the gift card -->
+                        <image id="steam5"></image>
+                        <card_name>Steam Gift Card $50</card_name>
+                        <cost>5700</cost>
+                        <supplier>Steam</supplier>
+                        <validity>2023</validity>
+                        <discount>10</discount>
+                        <delivery>Instant Delivery</delivery>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+                    
+                </products>
+            </row>
+
+            <row row_number="4">
+                <!-- Contains Details of cards of 4th row  -->
+                
+                <products>
+                    <gift_card id="gc13" type="Physical" category="Video" >
+                        <!-- Details of the gift card -->
+                        <image id="netflix6"></image>
+                        <card_name>Netflix Gift Card</card_name>
+                        <cost>6500</cost>
+                        <supplier>Netflix</supplier>
+                        <validity>2026</validity>
+                        <discount>15</discount>
+                        <purchase_btn notAvailable="no" >Out of Stock</purchase_btn>
+                        
+                    </gift_card>
+
+                    <gift_card id="gc14" type="Physical" category="Gaming">
+                        <!-- Details of the gift card -->
+                        <image id="xbox2"></image>
+                        <card_name>Xbox Gift Card</card_name>
+                        <cost>3000</cost> 
+                        <supplier>Microsoft</supplier>
+                        <validity>2025</validity>
+                        <stock>Available: 30</stock>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+                    <gift_card id="gc15" type="Physical" category="Music" >
+                        <!-- Details of the gift card -->
+                        <image id="spotify3"></image>
+                        <card_name>Spotify Gift Card</card_name>
+                        <cost>3500</cost>
+                        <supplier>Spotify</supplier>
+                        <validity>2024</validity>
+                        <discount>5</discount>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+
+
+                    <gift_card id="gc16" type="Physical" category="Music">
+                        <!-- Details of the gift card -->
+                        <image id="spotify6"></image>
+                        <card_name>Spotify Gift Card</card_name>
+                        <cost>6300</cost>
+                        <supplier>Steam</supplier>
+                        <discount>5</discount>
+                        <purchase_btn>Buy Now</purchase_btn>
+                    </gift_card>
+                    
+                </products>
+            </row>
+            
+
+
+        </cards>
+    </header>
+    <!-- The footer section contains all the footer contents -->
+    <footer>
+        <help>
+            <title>Get Help</title>
+            <p>Cities Available</p>
+            <p>Payment Methods</p>
+            <p>Report a problem</p>
+        </help>
+        <ul>
+            <!-- Contains address, phone and email of the store -->
+            <li>Kamalpokhari, Kathmandu</li>
+            <li>Phone: 099-385746</li>
+            <li>kbgiftcards007@gmail.com</li>
+        </ul>
+        <socials id="socials">
+            <!-- Contains social media links of the store -->
+            <logo id = "facebook"></logo>
+            <logo id = "instagram"></logo>
+            <logo id = "twitter"></logo>
+        </socials>
+    </footer>
+
+
+</store>

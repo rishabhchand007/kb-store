@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+store{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display:flex;
+    color:black;
+    padding-top:15px;
+    padding-bottom: 10px;
+    padding-left:15px;
+    padding-right:15px;
+    justify-content: space-between;
+    font-size: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.384);
+    font-family: 'Roboto', sans-serif;
+}   
+logo{
+    content: url(./images/logo.png);
+    width: 250px;
+    height:47px;
+    padding-left: 10px;
+    
+}
+name,address,telephone_number,url{
+    display:none;
+}
+
+links{
+    align-items: center;
+}
+links ul{
+    color:rgb(56, 56, 56);
+    display:flex;
+    justify-content: space-around;
+    gap: 4rem;
+    margin-top: 8px;
+}
+
+links ul li a{
+    text-align: center;
+    cursor: pointer;
+}
+links ul li a:hover{
+    color:rgb(0, 0, 0);
+    border-bottom: 2px solid #a472e9;
+    
+}
+
+logo img{
+    width:20px;
+    height:20px;
+}
+
+button{
+    background-color: #a472e9;
+    border-radius:20px;
+    color:white;
+    font-size: 16px;
+    padding:10px;
+}
+
+searchbox{
+    content: url(./images/search.png);
+    width: 240px;
+    height:50;
+    cursor:text;
+    padding-top:5px;
+    padding-right:15px;
+}
+products{
+    display:flex;
+    justify-content: space-around;
+
+}
+featured products{
+    margin-top:15px;
+}
+
+#h1{
+    font-size: 22px;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+featured{
+    padding:20px;
+    display: block;
+}
+gift_card{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding:25px;
+    box-shadow: 0 0 6px 0  rgba(0, 0, 0, 0.356);
+    border-radius: 20px;
+    transition: transform .2s;
+    overflow: hidden;
+}
+
+gift_card:hover{
+    transform: scale(1.06);
+    box-shadow: 0 0 8px 0  #7735d3;
+}
+
+image{
+    content: url("./images/apple\ 50.jpg");
+    width: 200px;
+    height: 300px;
+}
+
+validity,supplier,info{
+    font-size: 12px;
+}
+info{
+    color: rgb(255, 145, 0);
+}
+
+discount{
+    color:rgb(55, 173, 55)
+}
+
+card_name{
+    font-size: 16px bold;
+}
+cost{
+    color: rgb(102, 102, 102);
+
+}
+cost::before{
+    content: "Rs ";
+}
+discount::after{
+    content: "% Discount"
+}
+
+supplier::before{
+    content:"Supplier: "
+}
+
+validity::before{
+    content:"Validity: ";
+}
+
+stock::before{
+    content:"Available: "
+}
+
+purchase_btn{
+    background-color: #8d4ce9;
+    color: white;
+    width:80px;
+    text-align: center;
+    padding:5px;
+    cursor: pointer;
+
+}
+purchase_btn:hover{
+    
+    background-color:#600cd6;
+
+}
+
+
+row{
+    padding:20px;
+    display: block;
+    background-color: rgb(250, 250, 250);
+}
+row products{
+    margin-top:15px;
+}
+
+
+
+/* this is for images */
+#apple{
+    content: url("./images/apple\ 50.jpg");
+}
+#Visa{
+    content: url("./images/birthday.jpg");
+}
+#spotify{
+    content: url("./images/spotify.jpg");
+}
+#steam{
+    content: url("./images/steam100.jpg");
+}
+#nintendo{
+    content: url("./images/nintendo.jpg");
+}
+#xbox{
+    content: url("./images/xbox.jpg");
+}
+#playstation{
+    content: url("./images/ps.jpg");
+}
+#netflix{
+    content: url("./images/netflix.png");
+}
+#googleplay{
+    content: url("./images/google.jpg");
+}
+#amazon{
+    content: url("./images/amazon.jpg");
+}
+#fortnite{
+    content: url("./images/fortnite.jpg");
+}
+#steam5{
+    content: url("./images/steam50.jpg");
+}
+#netflix6{
+    content: url("./images/netflix60.png");
+}
+#xbox2{
+    content: url("./images/xbox25.jpg");
+}
+#spotify3{
+    content: url("./images/spotify30.jpg");
+}
+#spotify6{
+    content: url("./images/spotify60.jpg");
+}
+#facebook{
+    content: url("./images/facebook.png");
+    width: 48px;
+    height:48px;
+}
+#instagram{
+    content: url("./images/instagram.png");
+    width: 48px;
+    height:48px;
+}
+#twitter{
+    content: url("./images/twitter.png");
+    width: 48px;
+    height:48px;
+}
+
+footer{
+    background-color: rgb(31, 31, 31);
+    display:flex;
+    color:white;
+    margin-top:20px;
+    padding:25px;
+    padding-left: 6rem;
+    justify-content: space-between;
+}
+
+help{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+help title{
+    color:rgb(184, 180, 180);
+}
+
+#socials{
+    display: flex;
+    justify-content: space-around;
+    gap:2rem;
+    padding-right:5rem;
+    align-items: center;
+}
+footer ul{
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    flex-direction: column;
+    gap:12px;
+    padding-left:9rem;
+     
+}
+footer ul li{
+        display: list-item;
+        list-style: square;
+}
+
+[notAvailable="no"]{
+    background-color:rgb(255, 38, 0);
+}
+[notAvailable="no"]:hover{
+    background-color:rgb(255, 0, 0)
+}
+

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- 
+Name: Rishabh Chand 
+London Met ID: 20048980
+d: 
+-->
+
+<!--This XSD file describes nad validates the structure and content of the catalog_20048980 XML file.
+  Salami Slice design is used in this XSD File,  in this design we disassemble the instance document into its various components. 
+  We specify each component in the schema and then put them together.
+-->
+
+<xs:element name="country" type="xs:string"/>
+<xs:element name="city" type="xs:string"/>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="address">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="country"/>
+      <xs:element ref="city"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!--Restriction is used to define acceptable values in the XSD.
+Below, MinInclusive and MaxInclusive is used to define maximum and minimum value accepted in the element-->
+
+<xs:element name="telephone_number" >
+  <xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="9999999"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--anyURI is contains only URI of any site-->
+<xs:element name="url" type="xs:anyURI"/>
+
+
+<xs:element name="logo">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="id" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+<xs:element name="a">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <!--IF NO DATA IS INSERTED IN THE ATTRIBUTE IT IS AUTOMATICALLY SET TO '#home'-->
+        <xs:attribute type="xs:string" name="href" use="optional" default="#home"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+<xs:element name="li">
+  <xs:complexType mixed="true">
+    <xs:sequence>
+      <xs:element ref="a" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="ul">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="li" maxOccurs="unbounded" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="searchbox" type="xs:string"/>
+<xs:element name="store_details">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="name"/>
+      <xs:element ref="address"/>
+      <xs:element ref="telephone_number"/>
+      <xs:element ref="url"/>
+      <xs:element ref="logo"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="links">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="ul"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="search">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="searchbox"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="title" type="xs:string"/>
+<xs:element name="image">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="id" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+<xs:element name="card_name" type="xs:string"/>
+<xs:element name="cost" >
+  <xs:simpleType>
+    <xs:restriction base="xs:positiveInteger" >
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="supplier" >
+  <xs:simpleType>
+    <!--ENUMERATION DESCRIBES ONLY VALUES THAT CAN BE STORED IN THE ELEMENT-->
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="Apple"/>
+    <xs:enumeration value="Amazon"/>
+    <xs:enumeration value="Spotify"/>
+    <xs:enumeration value="Steam"/>
+    <xs:enumeration value="Nintendo"/>
+    <xs:enumeration value="Xbox"/>
+    <xs:enumeration value="PS"/>
+    <xs:enumeration value="Netflix"/>
+    <xs:enumeration value="Epic Games"/>
+    <xs:enumeration value="Google"/>
+    <xs:enumeration value="Microsoft"/>
+  </xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="validity" >
+  <xs:simpleType>
+    <!--positiveInteger datatype only accepts positive integer values -->
+    <xs:restriction base="xs:positiveInteger">
+      <!--Patterns describes the patten in which data is placed in the element-->
+      <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+<xs:element name="stock" type="xs:string"/>
+<xs:element name="info" type="xs:string"/>
+<xs:element name="purchase_btn">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <!-- FIXED CONTAINS THE ONLY DATA THAT IS ACCEPTED IN THE ATTRIBUTE-->
+        <xs:attribute type="xs:string" name="notAvailable" fixed="no"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+<xs:element name="discount" >
+  <xs:simpleType>
+    <xs:restriction base="xs:positiveInteger">
+
+      <xs:maxInclusive value="90"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="delivery" type="xs:string"/>
+<xs:element name="gift_card">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="image" maxOccurs="1" minOccurs="1"/>
+      <xs:element ref="card_name" maxOccurs="1" minOccurs="1"/>
+      <xs:element ref="cost" maxOccurs="1" minOccurs="1"/>
+      <xs:element ref="supplier" maxOccurs="1" minOccurs="1"/>
+      <xs:element ref="validity" minOccurs="0"/>
+      <xs:element ref="stock" minOccurs="0"/>
+      <xs:element ref="discount" minOccurs="0"/>
+      <xs:element ref="info" minOccurs="0"/>
+      <xs:element ref="delivery" minOccurs="0"/>
+      <xs:element ref="purchase_btn"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="required"/>
+    <xs:attribute type="xs:string" name="type" use="required"/>
+    <xs:attribute  name="category" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Purchase"/>
+            <xs:enumeration value="Gaming"/>
+            <xs:enumeration value="Music"/>
+            <xs:enumeration value="Video"/>
+            <xs:enumeration value="Gift"/>
+        </xs:restriction>
+    </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute type="xs:string" name="class" use="optional"/>
+  </xs:complexType>
+</xs:element>
+<xs:element name="div">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="title"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+</xs:element>
+<xs:element name="products">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="gift_card" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="featured">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="div"/>
+      <xs:element ref="products"/>
+    </xs:sequence>
+    <xs:attribute type="xs:byte" name="row_number"/>
+  </xs:complexType>
+</xs:element>
+<xs:element name="row">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="div" minOccurs="0"/>
+      <xs:element ref="products"/>
+    </xs:sequence>
+    <xs:attribute type="xs:byte" name="row_number" use="optional"/>
+  </xs:complexType>
+</xs:element>
+<xs:element name="nav">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="store_details"/>
+      <xs:element ref="links"/>
+      <xs:element ref="search"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="cards">
+  <xs:complexType>
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element ref="featured"/>
+      <xs:element ref="row"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:element>
+<xs:element name="p" type="xs:string"/>
+<xs:element name="help">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="title"/>
+      <xs:element ref="p" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="socials">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="logo" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+</xs:element>
+<xs:element name="header">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="nav"/>
+      <xs:element ref="cards"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="footer">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="help"/>
+      <xs:element ref="ul"/>
+      <xs:element ref="socials"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="store">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="header"/>
+      <xs:element ref="footer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>
